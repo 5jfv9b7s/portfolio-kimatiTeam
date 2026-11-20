@@ -1,0 +1,398 @@
+/* Takahashiのページだけに適用する配色とレイアウト。共通CSSの後に読み込みます。 */
+.takahashi-page {
+  --ink: #302b26;
+  --muted: #71675d;
+  --paper: #f5f1e8;
+  --line: #d8cfc1;
+  --orange: #a7462c;
+  --profile-accent: #a7462c;
+  --portrait-paper: #fffdf8;
+  -webkit-font-smoothing: antialiased;
+}
+
+.takahashi-page main {
+  padding-bottom: 32px;
+}
+
+.takahashi-page a:focus-visible {
+  outline: 2px solid var(--profile-accent);
+  outline-offset: 6px;
+}
+
+.takahashi-page a:hover {
+  color: var(--profile-accent);
+}
+
+.takahashi-page .eyebrow {
+  font-size: 0.7rem;
+  line-height: 1.7;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 10;
+  top: 12px;
+  left: 20px;
+  padding: 12px 20px;
+  color: var(--paper);
+  background: var(--ink);
+  transform: translateY(-180%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.profile-nav {
+  display: flex;
+  gap: 28px;
+  font: 0.75rem var(--mono);
+}
+
+/* 冒頭：左に名前と紹介、右に手描きアイコン。 */
+.profile-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 64px;
+  padding: 72px 0 88px;
+}
+
+.profile-hero h1 {
+  margin: 22px 0 30px;
+  font-size: clamp(3.75rem, 7.6vw, 6.5rem);
+  font-weight: 500;
+  letter-spacing: -0.075em;
+  line-height: 1.1;
+}
+
+.profile-hero h1 span {
+  color: var(--profile-accent);
+}
+
+.profile-catchphrase {
+  margin-bottom: 22px;
+  font-size: clamp(1.25rem, 2.3vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  line-height: 1.8;
+}
+
+.profile-catchphrase span {
+  color: var(--profile-accent);
+}
+
+.profile-intro {
+  margin-bottom: 28px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 2.1;
+}
+
+.profile-about-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+  border-bottom: 1px solid var(--ink);
+  padding: 10px 0;
+  font-size: 0.8rem;
+}
+
+.profile-portrait {
+  position: relative;
+  width: min(100%, 380px);
+  margin: 12px auto 0;
+  padding: 12px;
+}
+
+.portrait-paper {
+  position: relative;
+  margin: 0;
+  border: 1px solid #e5ded2;
+  padding: 14px 14px 0;
+  background: var(--portrait-paper);
+  box-shadow: 3px 7px 0 #e7e0d3;
+  transform: rotate(3deg);
+}
+
+.portrait-paper::before {
+  position: absolute;
+  z-index: 1;
+  top: -15px;
+  left: calc(50% - 46px);
+  width: 92px;
+  height: 30px;
+  background: #d8c6a4b3;
+  content: "";
+  transform: rotate(-7deg);
+}
+
+.profile-icon {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.profile-portrait figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 18px 4px;
+  font: 0.7rem var(--mono);
+}
+
+.profile-portrait figcaption span:last-child {
+  color: var(--profile-accent);
+  font-size: 1.3rem;
+}
+
+.portrait-note {
+  display: block;
+  margin-top: 30px;
+  color: var(--muted);
+  font: 0.65rem var(--mono);
+  text-align: right;
+}
+
+/* 基本情報：意味の対応が分かるようにHTMLはdl / dt / ddを使います。 */
+.profile-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr;
+  gap: 32px;
+  margin: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0;
+}
+
+.profile-facts dt {
+  margin-bottom: 12px;
+  color: var(--muted);
+  font: 0.65rem var(--mono);
+}
+
+.profile-facts dd {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* 本文：見出しを左の列、文章を右の列にそろえます。 */
+.profile-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
+  gap: 64px;
+  border-bottom: 1px solid var(--line);
+  padding: 72px 0;
+  scroll-margin-top: 28px;
+}
+
+.profile-section-heading h2 {
+  margin: 20px 0 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+  line-height: 1.8;
+}
+
+.profile-section-body p {
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 2.1;
+  overflow-wrap: anywhere;
+}
+
+.profile-section-body p:last-child {
+  margin-bottom: 0;
+}
+
+.about-copy {
+  max-width: 640px;
+}
+
+.profile-section-body .profile-lead {
+  margin-bottom: 28px;
+  color: var(--ink);
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+.profile-section-body .profile-aside {
+  margin-top: 28px;
+  border-left: 2px solid var(--profile-accent);
+  padding-left: 18px;
+  color: var(--ink);
+  font-size: 0.85rem;
+}
+
+.interest-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.profile-section-body .interest-category {
+  margin-bottom: 18px;
+  color: var(--profile-accent);
+  font: 0.65rem / 1.8 var(--mono);
+  letter-spacing: 0.04em;
+}
+
+.interest-item h3 {
+  margin-bottom: 16px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.interest-item p:last-child {
+  font-size: 0.85rem;
+}
+
+/* 制作物：公開URLが決まったらHTMLのプロジェクト名にリンクを追加できます。 */
+.personal-project {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: 32px;
+  padding: 28px 0;
+}
+
+.personal-project:first-child {
+  padding-top: 0;
+}
+
+.personal-project + .personal-project {
+  border-top: 1px solid var(--line);
+}
+
+.personal-project:last-child {
+  padding-bottom: 0;
+}
+
+.project-heading h3 {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.profile-values {
+  display: grid;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.profile-values li {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  gap: 20px;
+}
+
+.value-number {
+  padding-top: 5px;
+  color: var(--profile-accent);
+  font: 0.7rem / 1.8 var(--mono);
+}
+
+.profile-values h3 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.takahashi-page .member-footer-nav {
+  margin-top: 0;
+  border-top: 0;
+  padding: 28px 0;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+}
+
+/* タブレット：本文の列幅を確保します。 */
+@media (max-width: 1000px) {
+  .profile-hero {
+    gap: 32px;
+  }
+
+  .profile-section {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2.5fr);
+    gap: 36px;
+  }
+
+  .interest-list {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .interest-item + .interest-item {
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+  }
+}
+
+/* スマートフォン：写真、本文、基本情報を縦に並べます。 */
+@media (max-width: 700px) {
+  .profile-nav {
+    display: none;
+  }
+
+  .profile-hero {
+    grid-template-columns: 1fr;
+    gap: 42px;
+    padding: 48px 0 54px;
+  }
+
+  .profile-hero h1 {
+    font-size: clamp(2.75rem, 12vw, 4.75rem);
+  }
+
+  .profile-catchphrase {
+    font-size: clamp(1.05rem, 4.7vw, 1.6rem);
+  }
+
+  .profile-portrait {
+    width: min(88%, 340px);
+    margin-top: 0;
+  }
+
+  .profile-facts {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .profile-facts > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .profile-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 48px 0;
+  }
+
+  .profile-section-heading h2 {
+    margin-top: 12px;
+  }
+
+  .personal-project {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .project-heading .interest-category {
+    margin-bottom: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:has(.takahashi-page) {
+    scroll-behavior: auto;
+  }
+}
