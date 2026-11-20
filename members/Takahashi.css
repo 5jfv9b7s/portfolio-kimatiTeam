@@ -157,27 +157,68 @@
   text-align: right;
 }
 
-/* 基本情報：意味の対応が分かるようにHTMLはdl / dt / ddを使います。 */
+/* 基本情報：所属に広めの列を割り当て、大学名と学部・学科を分けます。 */
 .profile-facts {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.5fr;
-  gap: 32px;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.6fr) minmax(0, 1.2fr);
   margin: 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   padding: 28px 0;
 }
 
+.profile-facts > div {
+  min-width: 0;
+  padding: 0 28px;
+}
+
+.profile-facts > div:first-child {
+  padding-left: 0;
+}
+
+.profile-facts > div:last-child {
+  padding-right: 0;
+}
+
+.profile-facts > div + div {
+  border-left: 1px solid var(--line);
+}
+
 .profile-facts dt {
   margin-bottom: 12px;
   color: var(--muted);
-  font: 0.65rem var(--mono);
+  font: 0.65rem / 1.8 var(--mono);
 }
 
 .profile-facts dd {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.8;
+}
+
+.profile-affiliation-name {
+  display: block;
+}
+
+.profile-affiliation-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.75em;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.profile-facts .profile-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.profile-keywords > span {
+  border: 1px solid var(--line);
+  padding: 3px 10px;
+  font-size: 0.8rem;
 }
 
 /* 本文：見出しを左の列、文章を右の列にそろえます。 */
@@ -253,7 +294,7 @@
   font-size: 0.85rem;
 }
 
-/* 制作物：公開URLが決まったらHTMLのプロジェクト名にリンクを追加できます。 */
+/* 制作物：下線と矢印で、アプリを開くリンクだと分かるようにします。 */
 .personal-project {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
@@ -279,6 +320,23 @@
   font-weight: 500;
   line-height: 1.8;
   overflow-wrap: anywhere;
+}
+
+.project-link {
+  color: var(--profile-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
+
+.project-link:hover {
+  text-decoration-thickness: 2px;
+}
+
+.project-link > span {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 0.95rem;
 }
 
 .profile-values {
@@ -363,12 +421,25 @@
   }
 
   .profile-facts {
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    grid-template-columns: 1fr;
+    padding: 8px 0;
   }
 
-  .profile-facts > div:last-child {
-    grid-column: 1 / -1;
+  .profile-facts > div {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr);
+    align-items: start;
+    gap: 16px;
+    padding: 18px 0;
+  }
+
+  .profile-facts > div + div {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .profile-facts dt {
+    margin-bottom: 0;
   }
 
   .profile-section {

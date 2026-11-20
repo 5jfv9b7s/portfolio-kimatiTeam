@@ -72,12 +72,22 @@
           <dd>Takahashi</dd>
         </div>
         <div>
-          <dt>Team / 所属</dt>
-          <dd>大阪電気通信大学 情報通信工学部 情報工学科</dd>
+          <dt>Affiliation / 所属</dt>
+          <dd>
+            <span class="profile-affiliation-name">大阪電気通信大学</span>
+            <span class="profile-affiliation-detail">
+              <span>情報通信工学部</span>
+              <span>情報工学科</span>
+            </span>
+          </dd>
         </div>
         <div>
           <dt>Keywords / キーワード</dt>
-          <dd>音楽・野球・プログラミング</dd>
+          <dd class="profile-keywords">
+            <span>音楽</span>
+            <span>野球</span>
+            <span>プログラミング</span>
+          </dd>
         </div>
       </dl>
 
@@ -141,7 +151,7 @@
         </div>
       </section>
 
-      <!-- 公開URLが決まったら、各プロジェクト名にリンクを追加できます。 -->
+      <!-- プロジェクト名から、それぞれのアプリを新しいタブで開きます。 -->
       <section class="profile-section" id="projects" aria-labelledby="projects-heading">
         <div class="profile-section-heading">
           <p class="eyebrow">03 / Personal projects</p>
@@ -151,7 +161,17 @@
           <article class="personal-project">
             <div class="project-heading">
               <p class="interest-category">01 / Music × App</p>
-              <h3>nico-shelf</h3>
+              <h3>
+                <a
+                  class="project-link"
+                  href="https://nico-shelf.shiokara-lab.workers.dev/?code=35c2a1e8-d7b0-4b19-aaba-d56f73bc4f62"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="nico-shelfを開く（新しいタブ）"
+                >
+                  nico-shelf <span aria-hidden="true">↗</span>
+                </a>
+              </h3>
             </div>
             <p>
               音楽やニコニコ動画への関心から取り組んでいるアプリ。
@@ -161,7 +181,17 @@
           <article class="personal-project">
             <div class="project-heading">
               <p class="interest-category">02 / Baseball × Simulation</p>
-              <h3>NPBシミュレーター</h3>
+              <h3>
+                <a
+                  class="project-link"
+                  href="https://baseball-sim-test.shiokara-lab.workers.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="NPBシミュレーターを開く（新しいタブ）"
+                >
+                  NPBシミュレーター <span aria-hidden="true">↗</span>
+                </a>
+              </h3>
             </div>
             <p>
               野球をデータと仕組みの両面から楽しむシミュレーター。
