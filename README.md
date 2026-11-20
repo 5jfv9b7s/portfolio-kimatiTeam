@@ -9,6 +9,7 @@ Kimati Teamのポートフォリオサイト初稿です。HTML / CSS / JavaScri
 ## 公開方法
 
 GitHubリポジトリの **Settings → Pages** から、Build and deploymentのSourceに **Deploy from a branch**、Branchに `main` / `/ (root)` を指定します。
+https://5jfv9b7s.github.io/portfolio-kimatiTeam/index.html
 
 ## メンバーページ
 
