@@ -1,4 +1,4 @@
-# Kimati Team Portfolio
+#  Portfolio
 
 Kimati Teamのポートフォリオサイト初稿です。HTML / CSS / JavaScriptだけで構成しているため、GitHub Pagesなどの静的ホスティングでそのまま公開できます。
 
